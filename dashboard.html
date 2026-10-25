@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minha Frota</title><link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script></head>
+<body><main>
+<header><div><p class="eyebrow">CLOUD SECURITY PREVENTION E DEVSECOPS</p><h1>Minha Frota</h1><p>Veículos, despesas e manutenção em um só lugar.</p></div><button id="refresh" type="button">Atualizar dados</button></header>
+<p id="notice" role="status" aria-live="polite">Consultando a API…</p>
+<section class="summary"><article><span>Veículos ativos</span><strong id="total">—</strong></article><article><span>Custos registrados no mês</span><strong id="cost">—</strong></article><article><span>Pendências exibidas</span><strong id="pending">—</strong></article></section>
+<section class="panel"><div class="section-title"><h2>Seus veículos</h2><span id="count"></span></div><div id="vehicles" class="vehicles"></div></section>
+<div class="columns"><section class="panel"><h2 id="form-title">Cadastrar veículo</h2><form id="vehicle-form"><input type="hidden" name="id"><label>Tipo<select name="type"><option value="carro">Carro</option><option value="moto">Moto</option></select></label><label>Marca<input name="brand" maxlength="160" required placeholder="Ex.: Toyota"></label><label>Modelo<input name="model" maxlength="160" required placeholder="Ex.: Corolla"></label><div class="split"><label>Ano<input name="year" type="number" min="1886" max="2100" required value="2026"></label><label>Placa<input name="plate" maxlength="8" required placeholder="ABC1D23"></label></div><label>Quilometragem<input name="odometer_km" type="number" min="0" step="0.1" value="0" required></label><div class="actions"><button type="submit">Salvar veículo</button><button id="cancel" type="button" class="secondary">Limpar</button></div></form></section>
+<section class="panel"><h2>Próximos vencimentos</h2><p class="muted">Até 10 registros pendentes, ordenados por data.</p><div id="records"></div><h3>Sobre o projeto</h3><p>API REST em Python com banco SQLite. O ambiente publicado usa HTTPS e controle de acesso no Nginx.</p><p class="muted">Os veículos iniciais são dados demonstrativos. Os custos incluem os registros do mês, independentemente do status de pagamento.</p><a href="/api/health" target="_blank" rel="noopener">Consultar saúde da API →</a></section></div>
+<footer>Projeto acadêmico · Base didática de Eduardo Popovici · Dados demonstrativos</footer>
+</main></body></html>
